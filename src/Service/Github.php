@@ -29,10 +29,10 @@ class Github
     /**
      * @param string $username
      * @param string $repositoryName
-     * @param $issueNumber
+     * @param int $issueNumber
      * @return array
      */
-    public function getIssue(string $username, string $repositoryName, $issueNumber): array
+    public function getIssue(string $username, string $repositoryName, int $issueNumber): array
     {
         $cacheKey = __FUNCTION__ . "{$username}_{$repositoryName}_{$issueNumber}";
 
