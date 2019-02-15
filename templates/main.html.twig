@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="{{ path('logout') }}">Logout</a>
+    <h1>Api endpoints structure</h1>
+    <ul>
+        <li>/api/issues/{username}/{repositoryName}/{pageId}</li>
+        <li>/api/issue/{username}/{repositoryName}/{issueId}</li>
+    </ul>
+
+    <h1>Api endpoints examples</h1>
+    <li><a href="/api/issues/vim-vdebug/vdebug/1">/api/issues/vim-vdebug/vdebug/1</a></li>
+    <li><a href="/api/issue/vim-vdebug/vdebug/293">/api/issue/vim-vdebug/vdebug/293</a></li>
+{% endblock %}
