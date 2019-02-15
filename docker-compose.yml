@@ -1,0 +1,26 @@
+version: '3'
+services:
+    nginx:
+        build:
+            context: .docker/nginx-container
+        links:
+            - php
+        ports:
+            - '443:443'
+        volumes:
+            - .:/var/www/app
+        image: tesonet/nginx
+        container_name: tesonet-nginx
+    php:
+        build:
+            context: .docker/php7-container
+        volumes:
+            - .:/var/www/app
+        environment:
+            - REDIS_HOST=redis
+        image: tesonet/php
+        container_name: tesonet-php
+    redis:
+        image: redis:alpine
+        ports:
+            - '6379:6379'
